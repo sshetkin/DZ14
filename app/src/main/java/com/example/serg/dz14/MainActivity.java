@@ -17,14 +17,21 @@ public class MainActivity extends AppCompatActivity {
         TextView text1 = findViewById(R.id.text);
         text1.setText("New Hello");
 
+        TextView text2 = new TextView(this);
+        ViewGroup group = findViewById(R.id.content);
+        text2.setText("Picture2");
+        FrameLayout.LayoutParams lpText = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+        text2.setLayoutParams(lpText);
+        group.addView(text2);
+
+
         ImageView im2 = new ImageView(this);
-        ViewGroup group1 = findViewById(R.id.content);
+
         im2.setImageDrawable(getResources().getDrawable(R.drawable.image2));
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(300, 300);
-
         im2.setLayoutParams(lp);
-
-        group1.addView(im2);
+        group.addView(im2);
 
     }
 
